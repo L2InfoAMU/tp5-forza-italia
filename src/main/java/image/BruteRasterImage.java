@@ -26,12 +26,9 @@ public class BruteRasterImage implements Image {
     public BruteRasterImage(Color[][] colors){
         Matrices.requiresNonZeroDimensions(colors);
         Matrices.requiresNonNull(colors);
-        // this.colors=colors;
-        for(int widthMatrice=0; widthMatrice<Matrices.getColumnCount(colors); widthMatrice++){
-            for(int heightMatrice=0; heightMatrice<Matrices.getRowCount(colors); heightMatrice++){
-                this.colors[widthMatrice][heightMatrice]=colors[widthMatrice][heightMatrice];
-            }
-        }
+        this.width=colors.length;
+        this.height=colors[0].length;
+        this.colors=colors;
     }
 
     public int getWidth(){
