@@ -15,7 +15,7 @@ public class BruteRasterImage implements Image {
 
         this.width=width;
         this.height=height;
-        Color colors[][] = new Color[width][height];
+        Color [][] colors = new Color[width][height];
         for(int widthMatrice=0; widthMatrice<width; widthMatrice++){
             for(int heightMatrice=0; heightMatrice<height; heightMatrice++){
                 this.colors[widthMatrice][heightMatrice]=color;
@@ -26,7 +26,12 @@ public class BruteRasterImage implements Image {
     public BruteRasterImage(Color[][] colors){
         Matrices.requiresNonZeroDimensions(colors);
         Matrices.requiresNonNull(colors);
-        this.colors=colors;
+        // this.colors=colors;
+        for(int widthMatrice=0; widthMatrice<Matrices.getColumnCount(colors); widthMatrice++){
+            for(int heightMatrice=0; heightMatrice<Matrices.getRowCount(colors); heightMatrice++){
+                this.colors[widthMatrice][heightMatrice]=colors[widthMatrice][heightMatrice];
+            }
+        }
     }
 
     public int getWidth(){
@@ -57,7 +62,12 @@ public class BruteRasterImage implements Image {
     }
 
     private void setPixelsColor(Color[][] pixels){
-        this.colors = pixels;                                   // à vérifier si il ne faut pas itérer pour chaque pixel
+        //this.colors = pixels;                                   // à vérifier si il ne faut pas itérer pour chaque pixel
+        for(int widthMatrice=0; widthMatrice<Matrices.getColumnCount(colors); widthMatrice++){
+            for(int heightMatrice=0; heightMatrice<Matrices.getRowCount(colors); heightMatrice++){
+                this.colors[widthMatrice][heightMatrice]=colors[widthMatrice][heightMatrice];
+            }
+        }
     }
 
     private void setPixelsColor(Color color){
