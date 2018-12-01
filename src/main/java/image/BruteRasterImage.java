@@ -23,7 +23,8 @@ public class BruteRasterImage implements Image {
         }
     }
 
-    public BruteRasterImage(Color[][] colors){
+    public BruteRasterImage(Color[][] colors)
+    {
         Matrices.requiresNonZeroDimensions(colors);
         Matrices.requiresNonNull(colors);
         this.width=colors.length;
