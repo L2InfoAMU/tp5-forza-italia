@@ -62,15 +62,15 @@ public class PaletteRasterImage implements Image
 
     public void setPixelsColor(Color[][] pixels)
     {
-        for (int lines = 0;lines<width;lines++)
-            for (int rows = 0 ;rows < height; rows ++)
-                setPixelColor(pixels[lines][rows],lines,rows);
+        for (int widthMatrice=0;widthMatrice<width;widthMatrice++)
+            for (int heightMatrice=0 ;heightMatrice<height;heightMatrice++)
+                setPixelColor(pixels[widthMatrice][heightMatrice],widthMatrice,heightMatrice);
     }
     public void setPixelsColor(Color color)
     {
-        for (int lines = 0;lines<width;lines++)
-            for (int rows = 0 ;rows < height; rows ++)
-                setPixelColor(color,rows,lines);
+        for (int widthMatrice=0;widthMatrice<width;widthMatrice++)
+            for (int heightMatrice=0;heightMatrice<height;heightMatrice++)
+                setPixelColor(color,widthMatrice,heightMatrice);
     }
 
     public void setWidth(int width){
