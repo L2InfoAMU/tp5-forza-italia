@@ -22,7 +22,6 @@ public class SparseRasterImage extends RasterImage {
         pixelsMap = new HashMap<>();
     }
 
-
     @Override
     public Color getPixelColor(int x, int y){
         return pixelsMap.getOrDefault(new Point(x,y),Color.WHITE);
@@ -30,6 +29,6 @@ public class SparseRasterImage extends RasterImage {
 
     @Override
     public void setPixelColor(Color color, int x, int y){
-
+        pixelsMap.put(new Point(x,y),color);
     }
 }
