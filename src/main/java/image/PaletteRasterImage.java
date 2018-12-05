@@ -11,21 +11,15 @@ public class PaletteRasterImage extends RasterImage implements Image {
 
     public PaletteRasterImage(Color color, int width,int height) {
 
-        setWidth(width);
-        setHeight(height);
-        createrepresentation();
-        setPixelsColor(color);
+        super(color,width,height);
     }
 
-    public PaletteRasterImage(Color[][] pixel)
-    {
-        setWidth(Matrices.getRowCount(pixel));
-        setHeight(Matrices.getColumnCount(pixel));
-        createrepresentation();
-        setPixelsColor(pixel);
-    }
+    public PaletteRasterImage(Color[][] pixel) {
 
-    public void createrepresentation()
+        super(pixel);
+    }
+    @Override
+    public void createRepresentation()
     {
         palette = new ArrayList<>();
         indexOfcolors = new int[width][height];

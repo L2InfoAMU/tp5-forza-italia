@@ -16,6 +16,7 @@ public abstract class RasterImage implements Image
     protected Color[][] colors;
     protected HashMap<Point,Color> pixelsMap;
 
+    public abstract void createRepresentation();
     public abstract Color getPixelColor(int x, int y);
     public abstract void setPixelColor(Color color, int x, int y);
 
@@ -47,5 +48,23 @@ public abstract class RasterImage implements Image
             for(int heightMatrice=0; heightMatrice<height; heightMatrice++)
                setPixelColor(color,widthMatrice,heightMatrice);
 
+    }
+
+    RasterImage(Color color, int width,int height) {
+
+        setWidth(width);
+        setHeight(height);
+        createRepresentation();
+        setPixelsColor(color);
+    }
+
+    RasterImage(Color[][] pixels) {
+
+        Matrices.requiresNonZeroDimensions(pixels);
+        Matrices.requiresNonNull(pixels);
+        setWidth(Matrices.getRowCount(pixels));
+        setHeight(Matrices.getColumnCount(pixels));
+        createRepresentation();
+        setPixelsColor(pixels);
     }
 }

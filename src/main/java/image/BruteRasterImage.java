@@ -9,19 +9,12 @@ public class BruteRasterImage extends RasterImage implements Image {
 
     public BruteRasterImage(Color color, int width, int height){
 
-        setWidth(width);
-        setHeight(height);
-        createRepresentation();
-        setPixelsColor(color);
+        super(color,width,height);
     }
 
     public BruteRasterImage(Color[][] colors)
     {
-        Matrices.requiresNonZeroDimensions(colors);
-        Matrices.requiresNonNull(colors);
-        this.width=colors.length;
-        this.height=colors[0].length;
-        this.colors=colors;
+        super(colors);
     }
 
     public Color getPixelColor(int x, int y){
