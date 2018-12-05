@@ -43,7 +43,7 @@ public abstract class RasterImage implements Image
     protected void setPixelsColor(Color color){
         for(int widthMatrice=0; widthMatrice<width; widthMatrice++)
             for(int heightMatrice=0; heightMatrice<height; heightMatrice++)
-               setPixelColor(color,heightMatrice,widthMatrice);
+               setPixelColor(color,widthMatrice,heightMatrice);
 
     }
 }

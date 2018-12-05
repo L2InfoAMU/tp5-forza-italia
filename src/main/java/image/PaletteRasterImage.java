@@ -9,18 +9,18 @@ import java.util.List;
 
 public class PaletteRasterImage extends RasterImage implements Image {
 
-    public PaletteRasterImage(Color color, int width,int height)
-    {
-        this.width = width;
-        this.height = height;
+    public PaletteRasterImage(Color color, int width,int height) {
+
+        setWidth(width);
+        setHeight(height);
         createrepresentation();
         setPixelsColor(color);
     }
 
     public PaletteRasterImage(Color[][] pixel)
     {
-        this.setHeight(Matrices.getColumnCount(pixel));
-        this.setWidth(Matrices.getRowCount(pixel));
+        setWidth(Matrices.getRowCount(pixel));
+        setHeight(Matrices.getColumnCount(pixel));
         createrepresentation();
         setPixelsColor(pixel);
     }
