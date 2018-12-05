@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 import util.Matrices;
 import java.util.ArrayList;
 
+import java.util.HashMap;
 import java.util.List;
 public abstract class RasterImage implements Image
 {
@@ -13,6 +14,7 @@ public abstract class RasterImage implements Image
     protected int width;
     protected int height;
     protected Color[][] colors;
+    protected HashMap<Point,Color> pixelsMap;
 
     public abstract Color getPixelColor(int x, int y);
     public abstract void setPixelColor(Color color, int x, int y);
