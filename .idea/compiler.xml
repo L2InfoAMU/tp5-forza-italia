@@ -7,11 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Image" />
-        <module name="tp5-forza-italiaa" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="tp5-forza-italiaa" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

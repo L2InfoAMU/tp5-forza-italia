@@ -3,15 +3,17 @@ package image;
 import javafx.scene.paint.Color;
 import util.Matrices;
 
+import java.awt.image.Raster;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaletteRasterImage implements Image
+public class PaletteRasterImage extends RasterImage implements Image
 {
-    private List<Color> palette;
+    /*private List<Color> palette;
     private int[][] indexOfcolors;
     private int width;
     private int height;
+    */
 
     public PaletteRasterImage(Color color, int width,int height)
     {
@@ -40,6 +42,7 @@ public class PaletteRasterImage implements Image
         return palette.get(indexOfcolors[x][y]);
     }
 
+    /*
     @Override
     public int getWidth() {
         return width;
@@ -49,6 +52,7 @@ public class PaletteRasterImage implements Image
     public int getHeight() {
         return height;
     }
+    */
 
     public void setPixelColor(Color color, int x,int y)
     {
@@ -60,7 +64,7 @@ public class PaletteRasterImage implements Image
         else indexOfcolors[x][y] = palette.indexOf(color);
     }
 
-    public void setPixelsColor(Color[][] pixels)
+   /* public void setPixelsColor(Color[][] pixels)
     {
         for (int widthMatrice=0;widthMatrice<width;widthMatrice++)
             for (int heightMatrice=0 ;heightMatrice<height;heightMatrice++)
@@ -80,5 +84,6 @@ public class PaletteRasterImage implements Image
     public void setHeight(int height){
         this.height = height;
     }
+    */
 
 }
