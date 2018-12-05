@@ -7,13 +7,7 @@ import java.awt.image.Raster;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaletteRasterImage extends RasterImage implements Image
-{
-    /*private List<Color> palette;
-    private int[][] indexOfcolors;
-    private int width;
-    private int height;
-    */
+public class PaletteRasterImage extends RasterImage implements Image {
 
     public PaletteRasterImage(Color color, int width,int height)
     {
@@ -22,6 +16,7 @@ public class PaletteRasterImage extends RasterImage implements Image
         createrepresentation();
         setPixelsColor(color);
     }
+
     public PaletteRasterImage(Color[][] pixel)
     {
         this.setHeight(Matrices.getColumnCount(pixel));
@@ -29,7 +24,6 @@ public class PaletteRasterImage extends RasterImage implements Image
         createrepresentation();
         setPixelsColor(pixel);
     }
-
 
     public void createrepresentation()
     {
@@ -42,18 +36,6 @@ public class PaletteRasterImage extends RasterImage implements Image
         return palette.get(indexOfcolors[x][y]);
     }
 
-    /*
-    @Override
-    public int getWidth() {
-        return width;
-    }
-
-    @Override
-    public int getHeight() {
-        return height;
-    }
-    */
-
     public void setPixelColor(Color color, int x,int y)
     {
         if(!palette.contains(color))
@@ -63,27 +45,5 @@ public class PaletteRasterImage extends RasterImage implements Image
         }
         else indexOfcolors[x][y] = palette.indexOf(color);
     }
-
-   /* public void setPixelsColor(Color[][] pixels)
-    {
-        for (int widthMatrice=0;widthMatrice<width;widthMatrice++)
-            for (int heightMatrice=0 ;heightMatrice<height;heightMatrice++)
-                setPixelColor(pixels[widthMatrice][heightMatrice],widthMatrice,heightMatrice);
-    }
-    public void setPixelsColor(Color color)
-    {
-        for (int widthMatrice=0;widthMatrice<width;widthMatrice++)
-            for (int heightMatrice=0;heightMatrice<height;heightMatrice++)
-                setPixelColor(color,widthMatrice,heightMatrice);
-    }
-
-    public void setWidth(int width){
-        this.width = width;
-    }
-
-    public void setHeight(int height){
-        this.height = height;
-    }
-    */
 
 }
